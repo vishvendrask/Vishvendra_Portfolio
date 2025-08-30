@@ -121,7 +121,7 @@ const Hero = () => {
         className="relative z-10 container-max px-4 sm:px-6 lg:px-8 text-center lg:text-left"
         style={{ y, opacity }}
       >
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center mt-20">
           <div className="space-y-8">
             {/* Subtitle */}
             <motion.p
