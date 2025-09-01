@@ -115,7 +115,7 @@ const Experience = () => {
   return (
     <section id="experience" ref={ref} className="section-padding relative overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background-secondary via-background-tertiary to-background-primary" />
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-gray-100 to-white dark:from-background-secondary dark:via-background-tertiary dark:to-background-primary transition-all duration-500" />
       
       {/* Floating Elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -148,7 +148,7 @@ const Experience = () => {
           transition={{ duration: 0.7 }}
         >
           <motion.h2
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6"
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold section-header mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.2 }}
@@ -156,7 +156,7 @@ const Experience = () => {
             Work <span className="text-gradient">Experience</span>
           </motion.h2>
           <motion.p
-            className="text-xl text-text-secondary max-w-3xl mx-auto"
+            className="text-xl section-description max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.4 }}
@@ -199,7 +199,7 @@ const Experience = () => {
                     {/* Header */}
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
                       <div>
-                        <h3 className="text-2xl font-bold text-text-primary group-hover:text-neon-blue transition-colors duration-300">
+                        <h3 className="text-2xl font-bold section-header group-hover:text-neon-blue transition-colors duration-300">
                           {exp.title}
                         </h3>
                         <div className="flex items-center gap-2 text-neon-blue font-semibold">
@@ -208,11 +208,11 @@ const Experience = () => {
                         </div>
                       </div>
                       <div className="flex flex-col sm:items-end gap-2">
-                        <div className="flex items-center gap-2 text-text-secondary">
+                        <div className="flex items-center gap-2 section-description">
                           <Calendar className="w-4 h-4" />
                           <span className="text-sm">{exp.duration}</span>
                         </div>
-                        <div className="flex items-center gap-2 text-text-secondary">
+                        <div className="flex items-center gap-2 section-description">
                           <MapPin className="w-4 h-4" />
                           <span className="text-sm">{exp.location}</span>
                         </div>
@@ -220,7 +220,7 @@ const Experience = () => {
                     </div>
                     
                     {/* Description */}
-                    <p className="text-text-secondary mb-4">
+                    <p className="section-description mb-4">
                       {exp.description}
                     </p>
                     
@@ -263,7 +263,7 @@ const Experience = () => {
                       >
                         {/* Achievements */}
                         <div className="mb-6">
-                          <h4 className="text-lg font-semibold text-text-primary mb-3 flex items-center gap-2">
+                          <h4 className="text-lg font-semibold section-header mb-3 flex items-center gap-2">
                             <Award className="w-5 h-5 text-neon-yellow" />
                             Key Achievements
                           </h4>
@@ -271,7 +271,7 @@ const Experience = () => {
                             {exp.achievements.map((achievement, idx) => (
                               <li key={idx} className="flex items-start gap-2">
                                 <span className="w-2 h-2 bg-neon-yellow rounded-full mt-2 flex-shrink-0"></span>
-                                <span className="text-text-secondary">{achievement}</span>
+                                <span className="section-description">{achievement}</span>
                               </li>
                             ))}
                           </ul>
@@ -279,7 +279,7 @@ const Experience = () => {
                         
                         {/* Projects */}
                         <div className="mb-6">
-                          <h4 className="text-lg font-semibold text-text-primary mb-3 flex items-center gap-2">
+                          <h4 className="text-lg font-semibold section-header mb-3 flex items-center gap-2">
                             <Code className="w-5 h-5 text-neon-blue" />
                             Notable Projects
                           </h4>
@@ -287,7 +287,7 @@ const Experience = () => {
                             {exp.projects.map((project, idx) => (
                               <li key={idx} className="flex items-start gap-2">
                                 <span className="w-2 h-2 bg-neon-blue rounded-full mt-2 flex-shrink-0"></span>
-                                <span className="text-text-secondary">{project}</span>
+                                <span className="section-description">{project}</span>
                               </li>
                             ))}
                           </ul>
@@ -295,7 +295,7 @@ const Experience = () => {
                         
                         {/* Highlights */}
                         <div>
-                          <h4 className="text-lg font-semibold text-text-primary mb-3 flex items-center gap-2">
+                          <h4 className="text-lg font-semibold section-header mb-3 flex items-center gap-2">
                             <TrendingUp className="w-5 h-5 text-neon-green" />
                             Highlights
                           </h4>
@@ -303,7 +303,7 @@ const Experience = () => {
                             {exp.highlights.map((highlight, idx) => (
                               <li key={idx} className="flex items-start gap-2">
                                 <span className="w-2 h-2 bg-neon-green rounded-full mt-2 flex-shrink-0"></span>
-                                <span className="text-text-secondary">{highlight}</span>
+                                <span className="section-description">{highlight}</span>
                               </li>
                             ))}
                           </ul>
@@ -325,29 +325,29 @@ const Experience = () => {
           transition={{ duration: 0.7, delay: 1.0 }}
         >
           <div className="glass-card inline-block max-w-4xl">
-            <h3 className="text-2xl font-bold text-text-primary mb-4">
+            <h3 className="text-2xl font-bold section-header mb-4">
               Experience Summary
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center mb-6">
               <div>
                 <div className="text-3xl font-bold text-neon-blue mb-2">7+</div>
-                <div className="text-text-secondary">Years Experience</div>
+                <div className="section-description">Years Experience</div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-neon-purple mb-2">100+</div>
-                <div className="text-text-secondary">Projects Delivered</div>
+                <div className="section-description">Projects Delivered</div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-neon-green mb-2">15+</div>
-                <div className="text-text-secondary">Technologies</div>
+                <div className="section-description">Technologies</div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-neon-pink mb-2">4</div>
-                <div className="text-text-secondary">Companies</div>
+                <div className="section-description">Companies</div>
               </div>
             </div>
             <div className="p-4 bg-glass-dark dark:bg-glass-white/10 rounded-xl">
-              <p className="text-text-secondary text-sm leading-relaxed">
+              <p className="section-description text-sm leading-relaxed">
                 &quot;Throughout my career, I&apos;ve had the privilege of working with amazing teams and 
                 challenging projects that have shaped me into the developer I am today. I believe in 
                 continuous learning and pushing the boundaries of what&apos;s possible.&quot;

@@ -146,7 +146,7 @@ const ChatBot = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="fixed bottom-24 left-6 w-80 h-96 bg-glass-white dark:bg-glass-dark border border-glass-border dark:border-glass-borderDark rounded-2xl shadow-2xl z-50 flex flex-col"
+            className="fixed bottom-24 left-6 w-80 h-96 chat-window rounded-2xl shadow-2xl z-50 flex flex-col"
             initial={{ opacity: 0, scale: 0.8, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 20 }}
@@ -199,7 +199,7 @@ const ChatBot = () => {
                         className={`max-w-[80%] p-3 rounded-2xl ${
                           message.sender === 'user'
                             ? 'bg-neon-blue text-white rounded-br-md'
-                            : 'bg-glass-dark dark:bg-glass-white/20 text-text-primary rounded-bl-md'
+                            : 'chat-message text-theme-primary rounded-bl-md'
                         }`}
                       >
                         <p className="text-sm">{message.text}</p>
@@ -217,7 +217,7 @@ const ChatBot = () => {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <div className="bg-glass-dark dark:bg-glass-white/20 text-text-primary rounded-2xl rounded-bl-md p-3">
+                      <div className="chat-message text-theme-primary rounded-2xl rounded-bl-md p-3">
                         <div className="flex space-x-1">
                           <div className="w-2 h-2 bg-text-secondary rounded-full animate-bounce" />
                           <div className="w-2 h-2 bg-text-secondary rounded-full animate-bounce" style={{ animationDelay: '0.1s' }} />
@@ -240,7 +240,7 @@ const ChatBot = () => {
                       onChange={(e) => setInputValue(e.target.value)}
                       onKeyPress={handleKeyPress}
                       placeholder="Type your message..."
-                      className="flex-1 px-3 py-2 bg-glass-dark dark:bg-glass-white/20 border border-glass-border dark:border-glass-borderDark rounded-xl text-text-primary placeholder-text-secondary focus:outline-none focus:ring-2 focus:ring-neon-blue focus:border-transparent transition-all duration-300"
+                      className="flex-1 px-3 py-2 chat-input text-theme-primary placeholder-text-secondary focus:outline-none focus:ring-2 focus:ring-neon-blue focus:border-transparent transition-all duration-300"
                     />
                     <button
                       onClick={handleSendMessage}

@@ -89,12 +89,12 @@ const Resume = () => {
   return (
     <section id="resume" ref={ref} className="section-padding relative overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background-secondary via-background-tertiary to-background-primary" />
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-gray-100 to-white dark:from-background-secondary dark:via-background-tertiary dark:to-background-primary transition-all duration-500" />
       
       {/* Floating Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
-          className="absolute top-20 right-20 w-40 h-40 bg-neon-blue/10 rounded-full blur-2xl"
+          className="absolute top-20 right-20 w-40 h-40 bg-neon-blue/10 dark:bg-neon-blue/10 rounded-full blur-2xl transition-all duration-300"
           animate={{ 
             x: [0, -80, 0],
             y: [0, 60, 0],
@@ -103,7 +103,7 @@ const Resume = () => {
           transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="absolute bottom-40 left-40 w-32 h-32 bg-neon-purple/10 rounded-full blur-xl"
+          className="absolute bottom-40 left-40 w-32 h-32 bg-neon-purple/10 dark:bg-neon-purple/10 rounded-full blur-xl transition-all duration-300"
           animate={{ 
             x: [0, 60, 0],
             y: [0, -40, 0],
@@ -122,7 +122,7 @@ const Resume = () => {
           transition={{ duration: 0.7 }}
         >
           <motion.h2
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6"
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold section-header mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.2 }}
@@ -130,7 +130,7 @@ const Resume = () => {
             Professional <span className="text-gradient">Resume</span>
           </motion.h2>
           <motion.p
-            className="text-xl text-text-secondary max-w-3xl mx-auto"
+            className="text-xl section-description max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.4 }}
@@ -165,20 +165,20 @@ const Resume = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.8 }}
           >
-            <h1 className="text-4xl sm:text-5xl font-bold text-text-primary mb-4">
+            <h1 className="text-4xl sm:text-5xl font-bold section-header mb-4">
               Vishvendra Singh Khangarot
             </h1>
             <p className="text-2xl text-neon-blue font-semibold mb-6">
               Senior Full-Stack Developer
             </p>
-            <p className="text-text-secondary text-lg mb-6 max-w-3xl mx-auto">
+            <p className="section-description text-lg mb-6 max-w-3xl mx-auto">
               Passionate developer with 7+ years of experience delivering high-performance web and mobile applications. 
               Specialized in React, Angular, Node.js, and mobile development with a proven track record of leading 
               teams and delivering complex projects for global clients.
             </p>
             
             {/* Contact Information */}
-            <div className="flex flex-wrap justify-center gap-6 text-text-secondary">
+            <div className="flex flex-wrap justify-center gap-6 section-description">
               <div className="flex items-center gap-2">
                 <Mail className="w-5 h-5 text-neon-blue" />
                 <a href="mailto:vishvendrask@gmail.com" className="hover:text-neon-blue transition-colors">
@@ -233,21 +233,21 @@ const Resume = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 1.0 }}
           >
-            <h2 className="text-2xl font-bold text-text-primary mb-6 flex items-center gap-2">
+            <h2 className="text-2xl font-bold section-header mb-6 flex items-center gap-2">
               <Code className="w-6 h-6 text-neon-blue" />
               Technical Skills
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {Object.entries(skills).map(([category, skillList]) => (
                 <div key={category} className="space-y-3">
-                  <h3 className="text-lg font-semibold text-text-primary capitalize">
+                  <h3 className="text-lg font-semibold section-header capitalize">
                     {category.replace(/([A-Z])/g, ' $1').trim()}
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     {skillList.map((skill) => (
                       <span
                         key={skill}
-                        className="px-3 py-1 bg-glass-dark dark:bg-glass-white/10 rounded-lg text-sm text-text-secondary"
+                        className="px-3 py-1 bg-glass-dark dark:bg-glass-white/10 rounded-lg text-sm section-description"
                       >
                         {skill}
                       </span>
@@ -265,7 +265,7 @@ const Resume = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 1.2 }}
           >
-            <h2 className="text-2xl font-bold text-text-primary mb-6 flex items-center gap-2">
+            <h2 className="text-2xl font-bold section-header mb-6 flex items-center gap-2">
               <Building2 className="w-6 h-6 text-neon-blue" />
               Professional Experience
             </h2>
@@ -273,10 +273,10 @@ const Resume = () => {
               {experience.map((exp, index) => (
                 <div key={index} className="border-l-4 border-neon-blue pl-6">
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
-                    <h3 className="text-xl font-bold text-text-primary">
+                    <h3 className="text-xl font-bold section-header">
                       {exp.title}
                     </h3>
-                    <div className="flex items-center gap-4 text-sm text-text-secondary">
+                    <div className="flex items-center gap-4 text-sm section-description">
                       <span className="flex items-center gap-1">
                         <Calendar className="w-4 h-4" />
                         {exp.duration}
@@ -290,12 +290,12 @@ const Resume = () => {
                   <p className="text-neon-blue font-semibold mb-2">
                     {exp.company}
                   </p>
-                  <p className="text-text-secondary mb-3">
+                  <p className="section-description mb-3">
                     {exp.description}
                   </p>
                   <ul className="space-y-1">
                     {exp.achievements.map((achievement, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-text-secondary text-sm">
+                      <li key={idx} className="flex items-start gap-2 section-description text-sm">
                         <span className="w-2 h-2 bg-neon-blue rounded-full mt-2 flex-shrink-0"></span>
                         {achievement}
                       </li>
@@ -313,19 +313,19 @@ const Resume = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 1.4 }}
           >
-            <h2 className="text-2xl font-bold text-text-primary mb-6 flex items-center gap-2">
+            <h2 className="text-2xl font-bold section-header mb-6 flex items-center gap-2">
               <Award className="w-6 h-6 text-neon-blue" />
               Education & Certifications
             </h2>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <div>
-                <h3 className="text-xl font-bold text-text-primary mb-2">
+                <h3 className="text-xl font-bold section-header mb-2">
                   {education.degree}
                 </h3>
                 <p className="text-neon-blue font-semibold mb-2">
                   {education.institution}
                 </p>
-                <div className="flex items-center gap-4 text-sm text-text-secondary mb-3">
+                <div className="flex items-center gap-4 text-sm section-description mb-3">
                   <span className="flex items-center gap-1">
                     <Calendar className="w-4 h-4" />
                     {education.duration}
@@ -335,11 +335,11 @@ const Resume = () => {
                     {education.location}
                   </span>
                 </div>
-                <p className="text-text-secondary mb-3">
+                <p className="section-description mb-3">
                   GPA: {education.gpa}
                 </p>
                 <div>
-                  <h4 className="font-semibold text-text-primary mb-2">Relevant Courses:</h4>
+                  <h4 className="font-semibold section-header mb-2">Relevant Courses:</h4>
                   <div className="flex flex-wrap gap-2">
                     {education.relevantCourses.map((course) => (
                       <span
@@ -354,31 +354,31 @@ const Resume = () => {
               </div>
               
               <div>
-                <h3 className="text-xl font-bold text-text-primary mb-4">
+                <h3 className="text-xl font-bold section-header mb-4">
                   Certifications
                 </h3>
                 <div className="space-y-3">
                   <div className="p-4 bg-glass-dark dark:bg-glass-white/10 rounded-lg">
-                    <h4 className="font-semibold text-text-primary mb-1">
+                    <h4 className="font-semibold section-header mb-1">
                       AWS Certified Developer Associate
                     </h4>
-                    <p className="text-text-secondary text-sm">
+                    <p className="section-description text-sm">
                       Amazon Web Services • 2023
                     </p>
                   </div>
                   <div className="p-4 bg-glass-dark dark:bg-glass-white/10 rounded-lg">
-                    <h4 className="font-semibold text-text-primary mb-1">
+                    <h4 className="font-semibold section-header mb-1">
                       Google Cloud Professional Developer
                     </h4>
-                    <p className="text-text-secondary text-sm">
+                    <p className="section-description text-sm">
                       Google Cloud • 2022
                     </p>
                   </div>
                   <div className="p-4 bg-glass-dark dark:bg-glass-white/10 rounded-lg">
-                    <h4 className="font-semibold text-text-primary mb-1">
+                    <h4 className="font-semibold section-header mb-1">
                       MongoDB Certified Developer
                     </h4>
-                    <p className="text-text-secondary text-sm">
+                    <p className="section-description text-sm">
                       MongoDB University • 2021
                     </p>
                   </div>
@@ -394,17 +394,17 @@ const Resume = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 1.6 }}
           >
-            <h2 className="text-2xl font-bold text-text-primary mb-6 flex items-center gap-2">
+            <h2 className="text-2xl font-bold section-header mb-6 flex items-center gap-2">
               <TrendingUp className="w-6 h-6 text-neon-blue" />
               Key Projects
             </h2>
             <div className="space-y-6">
               {projects.map((project, index) => (
                 <div key={index} className="p-6 bg-glass-dark dark:bg-glass-white/10 rounded-xl">
-                  <h3 className="text-xl font-bold text-text-primary mb-2">
+                  <h3 className="text-xl font-bold project-title mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-text-secondary mb-3">
+                  <p className="project-description mb-3">
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-2 mb-3">
@@ -432,7 +432,7 @@ const Resume = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 1.8 }}
           >
-            <p className="text-text-secondary text-lg leading-relaxed max-w-4xl mx-auto">
+            <p className="section-description text-lg leading-relaxed max-w-4xl mx-auto">
               &quot;I am passionate about creating innovative digital solutions that solve real-world problems. 
               With expertise in both frontend and backend technologies, I enjoy building scalable applications 
               and mentoring team members. I believe in continuous learning and staying updated with the latest 
@@ -449,7 +449,7 @@ const Resume = () => {
           transition={{ duration: 0.7, delay: 2.0 }}
         >
           <div className="glass-card inline-block">
-            <h3 className="text-xl font-bold text-text-primary mb-4">
+            <h3 className="text-xl font-bold section-header mb-4">
               Need a different format?
             </h3>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

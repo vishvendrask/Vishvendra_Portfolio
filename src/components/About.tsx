@@ -139,7 +139,7 @@ const About = () => {
   return (
     <section id="about" ref={ref} className="section-padding relative overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background-secondary via-background-tertiary to-background-primary" />
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-gray-100 to-white dark:from-background-secondary dark:via-background-tertiary dark:to-background-primary transition-all duration-500" />
       
       {/* Floating 3D Elements */}
       <div className="absolute top-20 right-20 w-64 h-64 opacity-20">
@@ -162,7 +162,7 @@ const About = () => {
           transition={{ duration: 0.7 }}
         >
           <motion.h2
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6"
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold section-header mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.2 }}
@@ -170,7 +170,7 @@ const About = () => {
             About <span className="text-gradient">Me</span>
           </motion.h2>
           <motion.p
-            className="text-xl text-text-secondary max-w-3xl mx-auto"
+            className="text-xl section-description max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.4 }}
@@ -193,7 +193,7 @@ const About = () => {
               placeholder="Search about me..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-4 py-3 bg-glass-white dark:bg-glass-dark border border-glass-border dark:border-glass-borderDark rounded-xl backdrop-blur-md focus:outline-none focus:ring-2 focus:ring-neon-blue focus:border-transparent transition-all duration-300"
+              className="w-full pl-12 pr-4 py-3 bg-white/20 dark:bg-black/20 border border-white/30 dark:border-white/20 rounded-xl backdrop-blur-md shadow-lg dark:shadow-2xl focus:outline-none focus:ring-2 focus:ring-neon-blue focus:border-transparent transition-all duration-300 hover:shadow-xl dark:hover:shadow-2xl"
             />
           </div>
         </motion.div>
@@ -214,7 +214,7 @@ const About = () => {
                   <section.icon className="w-6 h-6 text-white" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-text-primary mb-3 group-hover:text-neon-blue transition-colors duration-300">
+                  <h3 className="text-xl font-semibold section-header mb-3 group-hover:text-neon-blue transition-colors duration-300">
                     {section.title}
                   </h3>
                   
@@ -247,9 +247,9 @@ const About = () => {
                     <div className="space-y-3">
                       <div>
                         <h4 className="font-medium text-neon-blue">{section.content.degree}</h4>
-                        <p className="text-text-secondary">{section.content.institution}</p>
-                        <p className="text-text-secondary text-sm">{section.content.duration}</p>
-                        <p className="text-text-secondary text-sm">GPA: {section.content.gpa}</p>
+                        <p className="section-description">{section.content.institution}</p>
+                        <p className="section-description text-sm">{section.content.duration}</p>
+                        <p className="section-description text-sm">GPA: {section.content.gpa}</p>
                       </div>
                     </div>
                   )}
@@ -257,10 +257,10 @@ const About = () => {
                   {section.id === 'awards' && isAwardsContent(section.content) && (
                     <div className="space-y-3">
                       <div>
-                        <h5 className="font-medium text-text-primary mb-2">Awards:</h5>
+                        <h5 className="font-medium section-header mb-2">Awards:</h5>
                         <ul className="space-y-1">
                           {section.content.awards.map((award, idx) => (
-                            <li key={idx} className="text-text-secondary text-sm flex items-center gap-2">
+                            <li key={idx} className="section-description text-sm flex items-center gap-2">
                               <div className="w-2 h-2 bg-neon-yellow rounded-full"></div>
                               {award}
                             </li>
@@ -268,10 +268,10 @@ const About = () => {
                         </ul>
                       </div>
                       <div>
-                        <h5 className="font-medium text-text-primary mb-2">Certifications:</h5>
+                        <h5 className="font-medium section-header mb-2">Certifications:</h5>
                         <ul className="space-y-1">
                           {section.content.certifications.map((cert, idx) => (
-                            <li key={idx} className="text-text-secondary text-sm flex items-center gap-2">
+                            <li key={idx} className="section-description text-sm flex items-center gap-2">
                               <div className="w-2 h-2 bg-neon-blue rounded-full"></div>
                               {cert}
                             </li>
@@ -284,10 +284,10 @@ const About = () => {
                   {section.id === 'interests' && isInterestsContent(section.content) && (
                     <div className="space-y-3">
                       <div>
-                        <h5 className="font-medium text-text-primary mb-2">Hobbies:</h5>
+                        <h5 className="font-medium section-header mb-2">Hobbies:</h5>
                         <div className="grid grid-cols-2 gap-2">
                           {section.content.hobbies.map((hobby, idx) => (
-                            <div key={idx} className="text-text-secondary text-sm flex items-center gap-2">
+                            <div key={idx} className="section-description text-sm flex items-center gap-2">
                               <div className="w-2 h-2 bg-neon-green rounded-full"></div>
                               {hobby}
                             </div>
@@ -295,7 +295,7 @@ const About = () => {
                         </div>
                       </div>
                       <div>
-                        <h5 className="font-medium text-text-primary mb-2">Languages:</h5>
+                        <h5 className="font-medium section-header mb-2">Languages:</h5>
                         <div className="flex flex-wrap gap-2">
                           {section.content.languages.map((language, idx) => (
                             <span key={idx} className="px-2 py-1 bg-neon-purple/20 text-neon-purple rounded text-xs">
@@ -320,10 +320,10 @@ const About = () => {
           transition={{ duration: 0.7, delay: 1.2 }}
         >
           <div className="glass-card inline-block">
-            <p className="text-text-secondary mb-4">
+            <p className="section-description mb-4">
               &quot;I believe in continuous learning and pushing the boundaries of what&apos;s possible in web and mobile development.&quot;
             </p>
-            <div className="flex items-center justify-center gap-4 text-sm text-text-secondary">
+            <div className="flex items-center justify-center gap-4 text-sm section-description">
               <span>Available for:</span>
               <span className="px-3 py-1 bg-neon-blue/20 text-neon-blue rounded-full">Full-time</span>
               <span className="px-3 py-1 bg-neon-purple/20 text-neon-purple rounded-full">Freelance</span>

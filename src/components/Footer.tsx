@@ -47,7 +47,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="relative bg-gradient-to-br from-background-primary via-background-secondary to-background-tertiary overflow-hidden">
+    <footer className="relative bg-gradient-to-br from-white via-gray-50 to-gray-100 dark:from-background-primary dark:via-background-secondary dark:to-background-tertiary overflow-hidden transition-all duration-500">
       {/* Background Elements */}
       <div className="absolute inset-0 matrix-bg opacity-5" />
       
@@ -87,10 +87,10 @@ const Footer = () => {
             >
               <div className="mb-6">
                 <h3 className="text-3xl font-bold text-gradient mb-3">VS</h3>
-                <p className="text-xl font-semibold text-text-primary mb-2">
+                <p className="text-xl font-semibold section-header mb-2">
                   Vishvendra Singh Khangarot
                 </p>
-                <p className="text-text-secondary">
+                <p className="section-description">
                   Senior Full-Stack Developer passionate about creating innovative digital solutions
                   that drive business growth and user engagement.
                 </p>
@@ -120,13 +120,13 @@ const Footer = () => {
               transition={{ duration: 0.7, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <h4 className="text-lg font-semibold text-text-primary mb-4">Quick Links</h4>
+              <h4 className="text-lg font-semibold section-header mb-4">Quick Links</h4>
               <ul className="space-y-2">
                 {quickLinks.map((link) => (
                   <li key={link.name}>
                     <a
                       href={link.href}
-                      className="text-text-secondary hover:text-neon-blue transition-colors duration-300"
+                      className="section-description hover:text-neon-blue transition-colors duration-300"
                     >
                       {link.name}
                     </a>
@@ -142,19 +142,19 @@ const Footer = () => {
               transition={{ duration: 0.7, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              <h4 className="text-lg font-semibold text-text-primary mb-4">Contact Info</h4>
+              <h4 className="text-lg font-semibold section-header mb-4">Contact Info</h4>
               <div className="space-y-3">
-                <div className="flex items-center gap-2 text-text-secondary">
+                <div className="flex items-center gap-2 section-description">
                   <Mail className="w-4 h-4 text-neon-blue" />
                   <a href="mailto:vishvendrask@gmail.com" className="hover:text-neon-blue transition-colors">
                     vishvendrask@gmail.com
                   </a>
                 </div>
-                <div className="flex items-center gap-2 text-text-secondary">
+                <div className="flex items-center gap-2 section-description">
                   <Globe className="w-4 h-4 text-neon-green" />
                   <span>Jaipur, Rajasthan, India</span>
                 </div>
-                <div className="flex items-center gap-2 text-text-secondary">
+                <div className="flex items-center gap-2 section-description">
                   <div className="w-2 h-2 bg-neon-green rounded-full animate-pulse" />
                   <span>Available for new projects</span>
                 </div>
@@ -176,10 +176,10 @@ const Footer = () => {
               transition={{ duration: 0.7 }}
               viewport={{ once: true }}
             >
-              <p className="text-text-secondary">
+              <p className="section-description">
                 © {currentYear} Vishvendra Singh Khangarot. All rights reserved.
               </p>
-              <p className="text-text-secondary text-sm mt-1">
+              <p className="section-description text-sm mt-1">
                 Built with Next.js, React, and Tailwind CSS
               </p>
             </motion.div>

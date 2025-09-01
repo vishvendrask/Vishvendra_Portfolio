@@ -85,7 +85,7 @@ const Contact = () => {
   return (
     <section id="contact" ref={ref} className="section-padding relative overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background-primary via-background-secondary to-background-tertiary" />
+      <div className="absolute inset-0 bg-gradient-to-br from-white via-gray-50 to-gray-100 dark:from-background-primary dark:via-background-secondary dark:to-background-tertiary transition-all duration-500" />
       <div className="absolute inset-0 matrix-bg opacity-5" />
 
       {/* Floating Elements */}
@@ -119,7 +119,7 @@ const Contact = () => {
           transition={{ duration: 0.7 }}
         >
           <motion.h2
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6"
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold section-header mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.2 }}
@@ -127,7 +127,7 @@ const Contact = () => {
             Let&apos;s <span className="text-gradient">Connect</span>
           </motion.h2>
           <motion.p
-            className="text-xl text-text-secondary max-w-3xl mx-auto"
+            className="text-xl section-description max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.4 }}
@@ -264,10 +264,10 @@ const Contact = () => {
                       <info.icon className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h4 className="text-lg font-semibold text-text-primary mb-1">
+                      <h4 className="text-lg font-semibold section-header mb-1">
                         {info.title}
                       </h4>
-                      <p className="text-text-secondary group-hover:text-neon-blue transition-colors duration-300">
+                      <p className="section-description group-hover:text-neon-blue transition-colors duration-300">
                         {info.value}
                       </p>
                     </div>
@@ -283,7 +283,7 @@ const Contact = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: 1.4 }}
             >
-              <h4 className="text-xl font-bold text-text-primary mb-4">Connect With Me</h4>
+              <h4 className="text-xl font-bold section-header mb-4">Connect With Me</h4>
               <div className="flex gap-4">
                 {socialLinks.map((social) => (
                   <motion.a
@@ -312,7 +312,7 @@ const Contact = () => {
                 <div className="w-3 h-3 bg-neon-green rounded-full animate-pulse" />
                 <span className="text-neon-green font-semibold">Available for new projects</span>
               </div>
-              <p className="text-text-secondary text-sm">
+              <p className="section-description text-sm">
                 I&apos;m currently accepting new clients and opportunities.
                 <br />
                 Response time: Usually within 24 hours
@@ -329,10 +329,10 @@ const Contact = () => {
           transition={{ duration: 0.7, delay: 1.8 }}
         >
           <div className="glass-card inline-block max-w-4xl">
-            <h3 className="text-2xl font-bold text-text-primary mb-4">
+            <h3 className="text-2xl font-bold section-header mb-4">
               Ready to Start Your Project?
             </h3>
-            <p className="text-text-secondary mb-6">
+            <p className="section-description mb-6">
               Whether you have a specific project in mind or just want to explore possibilities,
               I&apos;m here to help. Let&apos;s discuss your ideas and see how we can work together
               to bring your vision to life.

@@ -104,7 +104,7 @@ const Skills = () => {
   return (
     <section id="skills" ref={ref} className="section-padding relative overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background-primary via-background-secondary to-background-tertiary" />
+      <div className="absolute inset-0 bg-gradient-to-br from-white via-gray-50 to-gray-100 dark:from-background-primary dark:via-background-secondary dark:to-background-tertiary transition-all duration-500" />
       <div className="absolute inset-0 matrix-bg opacity-5" />
       
       {/* Floating Tech Icons */}
@@ -147,7 +147,7 @@ const Skills = () => {
           transition={{ duration: 0.7 }}
         >
           <motion.h2
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6"
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold section-header mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.2 }}
@@ -155,7 +155,7 @@ const Skills = () => {
             Technical <span className="text-gradient">Skills</span>
           </motion.h2>
           <motion.p
-            className="text-xl text-text-secondary max-w-3xl mx-auto"
+            className="text-xl section-description max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.4 }}
@@ -181,7 +181,7 @@ const Skills = () => {
                 <div className={`w-12 h-12 bg-gradient-to-br from-${category.color} to-${category.color}/60 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 ${category.glow}`}>
                   <category.icon className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-text-primary group-hover:text-neon-blue transition-colors duration-300">
+                <h3 className="text-xl font-semibold section-header group-hover:text-neon-blue transition-colors duration-300">
                   {category.title}
                 </h3>
               </div>
@@ -197,7 +197,7 @@ const Skills = () => {
                     transition={{ duration: 0.5, delay: 1 + categoryIndex * 0.1 + skillIndex * 0.05 }}
                   >
                     <div className="flex justify-between items-center">
-                      <span className="text-text-secondary font-medium">
+                      <span className="section-description font-medium">
                         {skill.name}
                       </span>
                       <span className={`text-${category.color} font-bold text-sm`}>
@@ -227,29 +227,29 @@ const Skills = () => {
           transition={{ duration: 0.7, delay: 1.0 }}
         >
           <div className="glass-card inline-block max-w-4xl">
-            <h3 className="text-2xl font-bold text-text-primary mb-4">
+            <h3 className="text-2xl font-bold section-header mb-4">
               Skills Summary
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center mb-6">
               <div>
                 <div className="text-3xl font-bold text-neon-blue mb-2">15+</div>
-                <div className="text-text-secondary">Technologies</div>
+                <div className="section-description">Technologies</div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-neon-purple mb-2">6</div>
-                <div className="text-text-secondary">Categories</div>
+                <div className="section-description">Categories</div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-neon-green mb-2">90%</div>
-                <div className="text-text-secondary">Average Proficiency</div>
+                <div className="section-description">Average Proficiency</div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-neon-pink mb-2">7+</div>
-                <div className="text-text-secondary">Years Experience</div>
+                <div className="section-description">Years Experience</div>
               </div>
             </div>
             <div className="mt-6 p-4 bg-glass-dark dark:bg-glass-white/10 rounded-xl">
-              <p className="text-text-secondary text-sm leading-relaxed">
+              <p className="section-description text-sm leading-relaxed">
                 &quot;I continuously update my skill set to stay current with the latest technologies 
                 and best practices. My expertise spans from frontend frameworks to backend systems, 
                 mobile development, and cloud infrastructure.&quot;
